@@ -17,3 +17,4 @@ cognito
 HtmlWebpackPlugin
 classmethod
 Mixins
+UserSession

@@ -115,6 +115,20 @@ return {
       require('plugins/copilot')
     end
   },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "github/copilot.vim" },
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    opts = {
+      debug = true, -- Enable debugging
+      -- See Configuration section for rest
+    },
+    -- See Commands section for default commands if you want to lazy load on them
+  },
+
   -- {
   --   "zbirenbaum/copilot.lua",
   --   cmd = { "Copilot" },
@@ -303,19 +317,32 @@ return {
   --   end,
   -- },
   --
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   config = function()
+  --     require("plugins/nvim-dap")
+  --   end,
+  -- },
+  -- {
+  --   "rcarriga/nvim-dap-ui",
+  -- },
+  -- {
+  --   "leoluz/nvim-dap-go",
+  --   config = function()
+  --     require("dap-go").setup()
+  --   end,
+  -- },
   {
-    "mfussenegger/nvim-dap",
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
     config = function()
-      require("plugins/nvim-dap")
+      require("plugins/chatgpt")
     end,
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-  },
-  {
-    "leoluz/nvim-dap-go",
-    config = function()
-      require("dap-go").setup()
-    end,
-  },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  }
 }

@@ -11,3 +11,5 @@ source $ZDOTDIR/zshrc
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 ######## END ZSHRC CONFIG ########
+
+. "$HOME/.cargo/env"
